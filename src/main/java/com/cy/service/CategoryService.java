@@ -1,6 +1,6 @@
 package com.cy.service;
 
-import com.cy.dataobject.ProductCategory;
+import com.cy.pojo.ProductCategory;
 
 import java.util.List;
 

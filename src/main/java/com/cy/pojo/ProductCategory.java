@@ -1,4 +1,4 @@
-package com.cy.dataobject;
+package com.cy.pojo;
 
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;

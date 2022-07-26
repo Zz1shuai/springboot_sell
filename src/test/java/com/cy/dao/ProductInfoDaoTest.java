@@ -1,6 +1,6 @@
 package com.cy.dao;
 
-import com.cy.dataobject.ProductInfo;
+import com.cy.pojo.ProductInfo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Create by 猪小帅

@@ -1,7 +1,7 @@
 package com.cy.service.impl;
 
 import com.cy.dao.ProductCategoryDao;
-import com.cy.dataobject.ProductCategory;
+import com.cy.pojo.ProductCategory;
 import com.cy.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

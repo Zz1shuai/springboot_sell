@@ -1,7 +1,7 @@
 package com.cy.service.impl;
 
 import com.cy.dao.ProductInfoDao;
-import com.cy.dataobject.ProductInfo;
+import com.cy.pojo.ProductInfo;
 import com.cy.enums.ProductStatusEnum;
 import com.cy.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;

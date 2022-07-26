@@ -1,6 +1,6 @@
 package com.cy.service;
 
-import com.cy.dataobject.ProductInfo;
+import com.cy.pojo.ProductInfo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

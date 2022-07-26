@@ -1,6 +1,6 @@
 package com.cy.dao;
 
-import com.cy.dataobject.ProductCategory;
+import com.cy.pojo.ProductCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

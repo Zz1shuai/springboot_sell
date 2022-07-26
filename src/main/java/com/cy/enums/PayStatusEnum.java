@@ -3,17 +3,16 @@ package com.cy.enums;
 import lombok.Getter;
 
 /**
- * 商品状态
  * @Create by 猪小帅
- * @date 2022/7/12 16:04
+ * @date 2022/7/14 12:38
  * @mood happy
  */
 @Getter
-public enum ProductStatusEnum {
+public enum PayStatusEnum {
 
-    UP(0, "在架"),
+    WAIT(0, "等待支付"),
 
-    DOWN(1, "下架")
+    SUCCESS(1, "支付成功"),
 
     ;
 
@@ -21,7 +20,7 @@ public enum ProductStatusEnum {
 
     String message;
 
-    ProductStatusEnum(Integer code, String message) {
+    PayStatusEnum(Integer code, String message) {
         this.code = code;
         this.message = message;
     }

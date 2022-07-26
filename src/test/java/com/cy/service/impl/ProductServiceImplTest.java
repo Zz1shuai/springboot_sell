@@ -1,6 +1,6 @@
 package com.cy.service.impl;
 
-import com.cy.dataobject.ProductInfo;
+import com.cy.pojo.ProductInfo;
 import com.cy.enums.ProductStatusEnum;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

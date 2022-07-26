@@ -1,6 +1,6 @@
 package com.cy.service.impl;
 
-import com.cy.dataobject.ProductCategory;
+import com.cy.pojo.ProductCategory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
