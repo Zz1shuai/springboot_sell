@@ -3,26 +3,25 @@ package com.cy.enums;
 import lombok.Getter;
 
 /**
- * 商品状态
  * @Create by 猪小帅
- * @date 2022/7/12 16:04
+ * @date 2022/8/24 10:31
  * @mood happy
  */
 @Getter
 public enum ProductStatusEnum {
 
-    UP(0, "在架"),
+    UP(0, "上架"),
 
     DOWN(1, "下架")
 
     ;
 
-    Integer code;
+    private Integer code;
 
-    String message;
+    private String msg;
 
-    ProductStatusEnum(Integer code, String message) {
+    ProductStatusEnum(Integer code, String msg) {
         this.code = code;
-        this.message = message;
+        this.msg = msg;
     }
 }

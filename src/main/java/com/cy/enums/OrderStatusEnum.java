@@ -4,11 +4,12 @@ import lombok.Getter;
 
 /**
  * @Create by 猪小帅
- * @date 2022/7/14 12:33
+ * @date 2022/8/24 15:11
  * @mood happy
  */
 @Getter
 public enum OrderStatusEnum {
+
     NEW(0, "新订单"),
 
     FINISHED(1, "完结"),
@@ -17,12 +18,12 @@ public enum OrderStatusEnum {
 
     ;
 
-    Integer code;
+    private Integer code;
 
-    String message;
+    private String msg;
 
-    OrderStatusEnum(Integer code, String message) {
+    OrderStatusEnum(Integer code, String msg) {
         this.code = code;
-        this.message = message;
+        this.msg = msg;
     }
 }

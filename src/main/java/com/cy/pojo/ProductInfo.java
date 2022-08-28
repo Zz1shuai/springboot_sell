@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 /**
  * 商品
  * @Create by 猪小帅
- * @date 2022/7/12 15:12
+ * @date 2022/8/23 10:27
  * @mood happy
  */
 @Entity
@@ -34,10 +34,9 @@ public class ProductInfo {
     /** 小图. */
     private String productIcon;
 
-    /** 状态,0正常 1下架. */
+    /** 状态, 0正常 1下架. */
     private Integer productStatus;
 
     /** 类目编号. */
     private Integer categoryType;
-
 }
