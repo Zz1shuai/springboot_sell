@@ -6,9 +6,9 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 商品(包含类目)
+ * 商品（包含类目）
  * @Create by 猪小帅
- * @date 2022/7/12 19:09
+ * @date 2022/8/24 11:20
  * @mood happy
  */
 @Data
@@ -20,8 +20,6 @@ public class ProductVo {
     @JsonProperty("type")
     private Integer categoryType;
 
-    @JsonProperty("food")
+    @JsonProperty("foods")
     private List<ProductInfoVo> productInfoVoList;
-
-
 }

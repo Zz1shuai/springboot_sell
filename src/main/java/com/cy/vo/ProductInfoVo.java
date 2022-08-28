@@ -6,9 +6,9 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 /**
- *商品详情
+ * 商品详情
  * @Create by 猪小帅
- * @date 2022/7/12 19:18
+ * @date 2022/8/24 11:25
  * @mood happy
  */
 @Data

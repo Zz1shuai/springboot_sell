@@ -8,11 +8,11 @@ import java.math.BigDecimal;
 
 /**
  * @Create by 猪小帅
- * @date 2022/7/14 12:50
+ * @date 2022/8/24 15:18
  * @mood happy
  */
-@Data
 @Entity
+@Data
 public class OrderDetail {
 
     @Id
@@ -20,6 +20,7 @@ public class OrderDetail {
 
     /** 订单id. */
     private String orderId;
+
     /** 商品id. */
     private String productId;
 
@@ -34,4 +35,6 @@ public class OrderDetail {
 
     /** 商品小图. */
     private String productIcon;
+
+
 }

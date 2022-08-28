@@ -1,59 +1,64 @@
 package com.cy.service.impl;
 
-import com.cy.pojo.ProductInfo;
 import com.cy.enums.ProductStatusEnum;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import com.cy.pojo.ProductInfo;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 /**
  * @Create by 猪小帅
- * @date 2022/7/12 16:12
+ * @date 2022/8/24 10:37
  * @mood happy
  */
+@RunWith(SpringRunner.class)
 @SpringBootTest
-class ProductServiceImplTest {
+public class ProductServiceImplTest {
 
     @Autowired
     private ProductServiceImpl productService;
+
     @Test
-    void findById() {
-        ProductInfo productInfo = productService.findById("12345");
-        Assertions.assertEquals("12345", productInfo.getProductId());
+    public void findOne() {
+        ProductInfo productInfo = productService.findOne("0000001");
+        Assert.assertEquals("0000001", productInfo.getProductId());
     }
 
     @Test
-    void findUpAll() {
+    public void findUpAll() {
         List<ProductInfo> productInfoList = productService.findUpAll();
-        Assertions.assertNotEquals(0, productInfoList.size());
+        Assert.assertNotEquals(0, productInfoList.size());
     }
 
     @Test
-    void findAll() {
-        PageRequest pageRequest = PageRequest.of(0, 2);
-        Page<ProductInfo> productInfoPage = productService.findAll(pageRequest);
-//        System.out.println(productInfoPage.getTotalElements());
-        Assertions.assertNotEquals(0, productInfoPage.getTotalElements());
+    public void findAll() {
+        PageRequest request = new PageRequest(0,2 );
+        Page<ProductInfo> productInfoPage = productService.findAll(request);
+        System.out.println(productInfoPage.getTotalElements());
     }
 
     @Test
-    void save() {
+    public void save() {
         ProductInfo productInfo = new ProductInfo();
-        productInfo.setProductId("6789");
-        productInfo.setProductName("皮皮虾");
-        productInfo.setProductPrice(new BigDecimal("3.2"));
+        productInfo.setProductId("0000002");
+        productInfo.setProductName("茉莉清茶");
+        productInfo.setProductPrice(new BigDecimal("3.0"));
         productInfo.setProductStock(100);
-        productInfo.setProductDescription("很好吃的粥虾");
+        productInfo.setProductDescription("娃哈哈茉莉清茶");
         productInfo.setProductIcon("http://xxxxx.jpg");
         productInfo.setProductStatus(ProductStatusEnum.DOWN.getCode());
         productInfo.setCategoryType(2);
+
         ProductInfo result = productService.save(productInfo);
-        Assertions.assertNotNull(result);
+        Assert.assertNotNull(result);
+
     }
 }

@@ -4,11 +4,11 @@ import com.cy.vo.ResultVo;
 
 /**
  * @Create by 猪小帅
- * @date 2022/7/13 15:39
+ * @date 2022/8/24 14:57
  * @mood happy
  */
 
-public class ResultVoUtils {
+public class ResultVoUtil {
 
     public static ResultVo<Object> success(Object object) {
         ResultVo<Object> resultVo = new ResultVo<>();
@@ -18,14 +18,15 @@ public class ResultVoUtils {
         return resultVo;
     }
 
-    public static ResultVo<Object> success() {
+    public static ResultVo success() {
         return success(null);
     }
 
-    public static ResultVo<Object> error(Integer code, String msg) {
-        ResultVo<Object> resultVo = new ResultVo<>();
+    public static ResultVo error(Integer code, String msg) {
+        ResultVo resultVo = new ResultVo();
         resultVo.setCode(code);
         resultVo.setMsg(msg);
         return resultVo;
     }
+
 }

@@ -1,4 +1,4 @@
-package com.cy.dao;
+package com.cy.repository;
 
 import com.cy.pojo.OrderMaster;
 import org.junit.Assert;
@@ -12,41 +12,40 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 
+
 /**
  * @Create by 猪小帅
- * @date 2022/7/20 21:04
+ * @date 2022/8/24 15:35
  * @mood happy
  */
-@SpringBootTest
 @RunWith(SpringRunner.class)
-public class OrderMasterDaoTest {
-
+@SpringBootTest
+public class OrderMasterRepositoryTest {
 
     @Autowired
-    private OrderMasterDao orderMasterDao;
+    private OrderMasterRepository repository;
 
-    private final String OPENID = "110110";
+    private final String OPENID = "210000";
 
     @Test
     public void saveTest() {
         OrderMaster orderMaster = new OrderMaster();
-        orderMaster.setOrderId("0002");
-        orderMaster.setBuyerName("小赵同学");
-        orderMaster.setBuyerPhone("13812040093");
-        orderMaster.setBuyerAddress("南京建邺");
+        orderMaster.setOrderId("0003");
+        orderMaster.setBuyerName("朱小帅");
+        orderMaster.setBuyerPhone("13812040092");
+        orderMaster.setBuyerAddress("江苏省南京市建邺区莲花嘉园");
         orderMaster.setBuyerOpenid(OPENID);
-        orderMaster.setOrderAmount(new BigDecimal("88.88"));
+        orderMaster.setOrderAmount(new BigDecimal(19.99));
 
-        OrderMaster result = orderMasterDao.save(orderMaster);
+        OrderMaster result = repository.save(orderMaster);
         Assert.assertNotNull(result);
 
     }
+
     @Test
     public void findByBuyerOpenid() {
-        PageRequest request = PageRequest.of(1,4);
-
-        Page<OrderMaster> result = orderMasterDao.findByBuyerOpenid(OPENID, request);
+        PageRequest pageRequest = new PageRequest(1, 2);
+        Page<OrderMaster> result = repository.findByBuyerOpenid(OPENID, pageRequest);
         Assert.assertNotEquals(0, result.getTotalElements());
-
     }
 }

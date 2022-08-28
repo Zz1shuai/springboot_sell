@@ -1,26 +1,22 @@
-package com.cy.pojo;
+package com.cy.dto;
 
 import com.cy.enums.OrderStatusEnum;
 import com.cy.enums.PayStatusEnum;
+import com.cy.pojo.OrderDetail;
 import lombok.Data;
-import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Create by 猪小帅
- * @date 2022/8/24 15:05
+ * @date 2022/8/26 9:12
  * @mood happy
  */
-@Entity
 @Data
-@DynamicUpdate
-public class OrderMaster {
+public class OrderDto {
 
-    @Id
     /** 订单id. */
     private String orderId;
 
@@ -51,4 +47,5 @@ public class OrderMaster {
     /** 更新时间. */
     private Date updateTime;
 
+    List<OrderDetail> orderDetailList;
 }

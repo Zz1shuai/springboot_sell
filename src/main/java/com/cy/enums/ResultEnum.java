@@ -4,23 +4,22 @@ import lombok.Getter;
 
 /**
  * @Create by 猪小帅
- * @date 2022/8/24 15:15
+ * @date 2022/8/26 9:29
  * @mood happy
  */
 @Getter
-public enum PayStatusEnum {
+public enum ResultEnum {
 
-    WAIT(0, "未支付"),
+    PRODUCT_NOT_EXIST(10, "商品不存在"),
 
-    SUCCESS(1, "支付成功"),
-
+    PRODUCT_STOCK_ERROR(11, "库存不足")
     ;
 
     private Integer code;
 
     private String msg;
 
-    PayStatusEnum(Integer code, String msg) {
+    ResultEnum(Integer code, String msg) {
         this.code = code;
         this.msg = msg;
     }
