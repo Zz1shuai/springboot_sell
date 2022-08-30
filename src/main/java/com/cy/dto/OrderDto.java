@@ -3,9 +3,12 @@ package com.cy.dto;
 import com.cy.enums.OrderStatusEnum;
 import com.cy.enums.PayStatusEnum;
 import com.cy.pojo.OrderDetail;
+import com.cy.utils.serializer.Date2LongSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +18,8 @@ import java.util.List;
  * @mood happy
  */
 @Data
+//@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderDto {
 
     /** 订单id. */
@@ -42,10 +47,12 @@ public class OrderDto {
     private Integer payStatus = PayStatusEnum.WAIT.getCode();
 
     /** 创建时间. */
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date createTime;
 
     /** 更新时间. */
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date updateTime;
 
-    List<OrderDetail> orderDetailList;
+    List<OrderDetail> orderDetailList = new ArrayList<>();
 }

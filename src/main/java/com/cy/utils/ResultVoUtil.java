@@ -10,7 +10,7 @@ import com.cy.vo.ResultVo;
 
 public class ResultVoUtil {
 
-    public static ResultVo<Object> success(Object object) {
+    public static ResultVo success(Object object) {
         ResultVo<Object> resultVo = new ResultVo<>();
         resultVo.setData(object);
         resultVo.setCode(0);
@@ -28,5 +28,6 @@ public class ResultVoUtil {
         resultVo.setMsg(msg);
         return resultVo;
     }
+
 
 }
