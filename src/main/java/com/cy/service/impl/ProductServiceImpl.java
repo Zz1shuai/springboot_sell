@@ -59,6 +59,7 @@ public class ProductServiceImpl implements ProductService {
             if (productInfo == null) {
                 throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
             }
+
             int result = productInfo.getProductStock() + cartDto.getProductQuantity();
             productInfo.setProductStock(result);
 

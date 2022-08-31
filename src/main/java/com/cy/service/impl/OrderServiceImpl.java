@@ -154,6 +154,7 @@ public class OrderServiceImpl implements OrderService {
             log.info("【取消订单】 订单状态不正确, orderId = {}, orderStatus = {}", orderDto.getOrderId(), orderDto.getOrderStatus());
             throw new SellException(ResultEnum.ORDER_STATUS_ERROR);
         }
+
         //修改订单状态
         orderDto.setOrderStatus(OrderStatusEnum.CANCEL.getCode());
         BeanUtils.copyProperties(orderDto, orderMaster);
@@ -172,7 +173,6 @@ public class OrderServiceImpl implements OrderService {
                 .map(e -> new CartDto(e.getProductId(), e.getProductQuantity()))
                 .collect(Collectors.toList());
         productService.increaseStock(cartDtoList);
-
 
         //如果已支付，需要退款退款
         if (orderDto.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())) {

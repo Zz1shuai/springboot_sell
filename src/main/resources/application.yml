@@ -6,8 +6,8 @@ spring:
     url: jdbc:mysql://localhost:3306/sell?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
-#  jackson:
-#    default-property-inclusion: non_null
+  jackson:
+    default-property-inclusion: non_null
 server:
   context-path: /sell
 #logging:
@@ -16,3 +16,7 @@ server:
 #    name: /itunes/log/tomcat/sell.log
 #  level:
 #    com.cy.LoggerTest: debug
+
+wechat:
+  mpAppId: wxa7020bbc7570f57b
+  mpAppSecret: 431bb6ef7e6cee98850e8928cb53c4c4
