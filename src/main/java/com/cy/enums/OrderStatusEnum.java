@@ -8,7 +8,7 @@ import lombok.Getter;
  * @mood happy
  */
 @Getter
-public enum OrderStatusEnum {
+public enum OrderStatusEnum implements CodeEnum {
 
     NEW(0, "新订单"),
 

@@ -13,6 +13,7 @@ import com.cy.pojo.ProductInfo;
 import com.cy.repository.OrderDetailRepository;
 import com.cy.repository.OrderMasterRepository;
 import com.cy.service.OrderService;
+import com.cy.service.PayService;
 import com.cy.service.ProductService;
 import com.cy.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -47,6 +48,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderMasterRepository orderMasterRepository;
+
+    @Autowired
+    private PayService payService;
 
     /**
      * 创建订单.
@@ -176,7 +180,7 @@ public class OrderServiceImpl implements OrderService {
 
         //如果已支付，需要退款退款
         if (orderDto.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())) {
-            //TODO
+            payService.refund(orderDto);
         }
         return orderDto;
     }
@@ -239,5 +243,19 @@ public class OrderServiceImpl implements OrderService {
         }
 
         return orderDto;
+    }
+
+    /**
+     * 查询订单列表.
+     *
+     * @param pageable
+     */
+    @Override
+    public Page<OrderDto> findList(Pageable pageable) {
+        Page<OrderMaster> orderMasterPage = orderMasterRepository.findAll(pageable);
+
+        List<OrderDto> orderDtoList = OrderMaster2OrderDtoConverter.converter(orderMasterPage.getContent());
+
+        return new PageImpl<>(orderDtoList, pageable, orderMasterPage.getTotalElements());
     }
 }

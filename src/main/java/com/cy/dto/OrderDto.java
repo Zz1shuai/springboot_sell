@@ -3,7 +3,9 @@ package com.cy.dto;
 import com.cy.enums.OrderStatusEnum;
 import com.cy.enums.PayStatusEnum;
 import com.cy.pojo.OrderDetail;
+import com.cy.utils.EnumUtil;
 import com.cy.utils.serializer.Date2LongSerializer;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 
@@ -55,4 +57,14 @@ public class OrderDto {
     private Date updateTime;
 
     List<OrderDetail> orderDetailList = new ArrayList<>();
+
+    @JsonIgnore
+    public OrderStatusEnum getOrderStatusEnum() {
+        return EnumUtil.getByCode(orderStatus, OrderStatusEnum.class);
+    }
+
+    @JsonIgnore
+    public PayStatusEnum getPayStatusEnum() {
+        return EnumUtil.getByCode(payStatus, PayStatusEnum.class);
+    }
 }
